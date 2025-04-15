@@ -41,6 +41,14 @@ private:
 	UPROPERTY(SaveGame)
 	float RemainingStepTime;
 
+public:
+
+	const FTimerHandle& GetCompletionTimerHandle() const { return CompletionTimerHandle; }
+	const FTimerHandle& GetStepTimerHandle() const { return StepTimerHandle; }
+
+	float GetCompletionTime() const { return CompletionTime; }
+	float GetStepTime() const { return StepTime; }
+	
 protected:
 	virtual void InitializeInstance() override;
 	virtual void ExecuteInput(const FName& PinName) override;
